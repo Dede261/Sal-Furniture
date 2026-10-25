@@ -34,7 +34,6 @@ function addToCart(name){cart.push(name);document.getElementById('cartCount').te
 function showCart(){if(!cart.length){notice('Keranjang masih kosong.');return}const summary=cart.reduce((a,n)=>(a[n]=(a[n]||0)+1,a),{});notice('Keranjang: '+Object.entries(summary).map(([n,c])=>n+' × '+c).join(', '));}
 function notice(t){const el=document.getElementById('notice');el.textContent=t;el.style.display='block';clearTimeout(window.noticeTimer);window.noticeTimer=setTimeout(()=>el.style.display='none',3200)}
 document.getElementById('searchInput').addEventListener('input',render);document.querySelectorAll('.category').forEach(el=>el.addEventListener('click',()=>{activeCategory=activeCategory===el.dataset.category?'':el.dataset.category;document.getElementById('produk').scrollIntoView();render()}));
-function contactStore()
 function contactStore(){
   const number = '6285871494299';
   const message = 'Halo SAL Furniture, saya ingin memesan furniture.';
